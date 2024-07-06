@@ -1,0 +1,26 @@
+.button {
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    outline: none;
+    color: var(--white);
+    border-radius: 29px;
+}
+.button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.accent {
+    background-color: var(--primary-color);
+}
+
+.small {
+    font-size: 16px;
+    padding: 10px 25px;
+}
+
+.big {
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 20px 60px;
+}
