@@ -6,7 +6,7 @@ function App() {
         <>
             <Button appearance="big">asdsad</Button>
             <Button>asdsad</Button>
-            <Input placeholder="Email" type="email"/>
+            <Input placeholder="Email" type="email" />
         </>
     );
 }
