@@ -1,0 +1,19 @@
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    border-right: 1px solid var(--separator-color);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
