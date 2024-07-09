@@ -30,8 +30,8 @@ export const cartSlice = createSlice({
                 return i;
             });
         }
-    },
-    extraReducers: (builder) => {}
+    }
+    // extraReducers: (builder) => {}
 });
 
 export default cartSlice.reducer;
