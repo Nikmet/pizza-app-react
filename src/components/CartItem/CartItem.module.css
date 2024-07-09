@@ -1,0 +1,68 @@
+.item {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27px;
+    height: 100px;
+}
+
+.desc {
+    display: flex;
+    gap: 20px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.image {
+    height: 100%;
+    width: 100px;
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    height: 30px;
+    align-items: center;
+}
+
+.button {
+    height: 100%;
+    width: 30px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    background: none;
+    cursor: pointer;
+}
+
+.minus {
+    background-color: var(--white);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.plus {
+    background-color: var(--primary-color);
+    color: var(--white);
+}

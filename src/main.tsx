@@ -14,6 +14,7 @@ import { Register } from "./pages/Register/Register.tsx";
 import { RequireAuth } from "./helpers/RequireAuth/RequireAuth.tsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.ts";
+import { Success } from "./pages/Succes/Succes.tsx";
 
 const Menu = lazy(() => import("./pages/Menu/Menu"));
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
                             .catch((e) => e.message)
                     });
                 }
+            },
+            {
+                path: "/success",
+                element: <Success />
             }
         ]
     },

@@ -1,0 +1,41 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 600px;
+}
+
+.no-line {
+    border: none !important;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f1f2f3;
+    padding-bottom: 13px;
+}
+
+.title {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.summa {
+    font-size: 21px;
+    color: var(--text-color);
+}
+
+.rub {
+    font-size: 14px;
+    margin-left: 5px;
+    color: #9796a1;
+}
+
+.order {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}

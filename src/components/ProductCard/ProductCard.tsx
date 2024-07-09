@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
-import { ProductCardProps } from "./ProductCard.props";
 import { useDispatch } from "react-redux";
 import { typeAppDispatch } from "../../store/store";
 import { cartActions } from "../../store/cart.slice";
 import { MouseEvent } from "react";
+import { ProductCardProps } from "../CartItem/CartItem.props";
 
 function ProductCard(props: ProductCardProps) {
     const dispatch = useDispatch<typeAppDispatch>();
