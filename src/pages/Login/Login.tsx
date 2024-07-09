@@ -28,21 +28,12 @@ export function Login() {
         }
     }, [jwt, navigate]);
 
-    const sendLogin = async (email: string, password: string) => {
-        dispatch(
-            login({
-                email,
-                password
-            })
-        );
-    };
-
     const submit = async (e: FormEvent) => {
         e.preventDefault();
         dispatch(userActions.clearLoginError());
         const target = e.target as typeof e.target & LoginForm;
         const { email, password } = target;
-        await sendLogin(email.value, password.value);
+        dispatch(login({ email: email.value, password: password.value }));
     };
 
     return (
