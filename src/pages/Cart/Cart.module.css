@@ -39,3 +39,8 @@
     justify-content: center;
     margin-top: 100px;
 }
+
+.empty {
+    font-size: 40px;
+    color: var(--text-secondary-color);
+}

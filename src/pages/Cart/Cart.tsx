@@ -17,21 +17,42 @@ export function Cart() {
     const items = useSelector((s: RootState) => s.cart.items);
     const jwt = useSelector((s: RootState) => s.user.jwt);
     const [cartProducts, setCartProducts] = useState<IProduct[]>([]);
+    const [total, setTotal] = useState<number>(0);
     const navigate = useNavigate();
 
-    const total = items
-        .map((i) => {
-            const product = cartProducts.find((p) => p.id === i.id);
-            if (!product) {
-                return 0;
-            }
-            return i.count * product.price;
-        })
-        .reduce((acc, i) => ((acc += i), 0));
+    // const total = items
+    //     .map((i) => {
+    //         const product = cartProducts.find((p) => p.id === i.id);
+    //         if (!product) {
+    //             return 0;
+    //         }
+    //         return i.count * product.price;
+    //     })
+    //     .reduce((acc, i) => ((acc += i), 0));
 
     useEffect(() => {
         loadAllItems();
     }, [items]);
+
+    useEffect(() => {
+        if (items.length > 0) {
+            setTotal(
+                items
+                    .map((i) => {
+                        const product = cartProducts.find((p) => p.id === i.id);
+                        if (!product) {
+                            return 0;
+                        }
+                        return i.count * product.price;
+                    })
+                    .reduce((acc, i) => {
+                        return (acc += i);
+                    })
+            );
+        } else {
+            setTotal(0);
+        }
+    }, [items, cartProducts, setTotal]);
 
     const getItem = async (id: number) => {
         const { data } = await axios.get<IProduct>(`${PREFIX}/products/${id}`);
@@ -68,34 +89,39 @@ export function Cart() {
                 }
                 return <CartItem key={i.id} count={i.count} {...product} />;
             })}
-            <div className={styles.wrapper}>
-                <div className={styles.line}>
-                    <div className={styles.title}>Итог</div>
-                    <div className={styles.summa}>
-                        {total}
-                        <span className={styles.rub}>₽</span>
+            {total > 0 && (
+                <>
+                    <div className={styles.wrapper}>
+                        <div className={styles.line}>
+                            <div className={styles.title}>Итог</div>
+                            <div className={styles.summa}>
+                                {total}
+                                <span className={styles.rub}>₽</span>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                            <div className={styles.title}>Доставка</div>
+                            <div className={styles.summa}>
+                                {DELIVERY_PRICE}
+                                <span className={styles.rub}>₽</span>
+                            </div>
+                        </div>
+                        <div className={cn(styles.line, styles["no-line"])}>
+                            <div className={styles.title}>Всего</div>
+                            <div className={styles.summa}>
+                                {total + DELIVERY_PRICE}
+                                <span className={styles.rub}>₽</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.line}>
-                    <div className={styles.title}>Доставка</div>
-                    <div className={styles.summa}>
-                        {DELIVERY_PRICE}
-                        <span className={styles.rub}>₽</span>
+                    <div className={styles.order}>
+                        <Button appearance="big" onClick={checkout}>
+                            Оформить заказ
+                        </Button>
                     </div>
-                </div>
-                <div className={cn(styles.line, styles["no-line"])}>
-                    <div className={styles.title}>Всего</div>
-                    <div className={styles.summa}>
-                        {total + DELIVERY_PRICE}
-                        <span className={styles.rub}>₽</span>
-                    </div>
-                </div>
-            </div>
-            <div className={styles.order}>
-                <Button appearance="big" onClick={checkout}>
-                    Оформить заказ
-                </Button>
-            </div>
+                </>
+            )}
+            {total === 0 && <div className={styles.empty}>Корзина пустая =(</div>}
         </>
     );
 }
