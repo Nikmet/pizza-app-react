@@ -16,7 +16,7 @@ export function Success() {
 
     return (
         <div className={styles.wrapper}>
-            <img src="/pizza.png" alt="pizza" />
+            <img src="/pizza-app-react/pizza.png" alt="pizza" />
             <p className={styles.text}>Ваш заказ успешно оформлен!</p>
             <Button appearance="big" onClick={toMain}>
                 Сделать новый

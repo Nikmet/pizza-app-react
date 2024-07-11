@@ -26,7 +26,7 @@ export function Layout() {
         <div className={styles.layout}>
             <div className={styles.sidebar}>
                 <div className={styles.user}>
-                    <img className={styles.avatar} src="/avatar.png" alt="avatar" />
+                    <img className={styles.avatar} src="./avatar.png" alt="avatar" />
                     <div className={styles.name}>{profile?.name}</div>
                     <div className={styles.email}>{profile?.email}</div>
                 </div>
@@ -39,7 +39,7 @@ export function Layout() {
                             })
                         }
                     >
-                        <img src="/menu.svg" alt="меню" />
+                        <img src="/pizza-app-react/menu.svg" alt="меню" />
                         Меню
                     </NavLink>
                     <NavLink
@@ -50,13 +50,13 @@ export function Layout() {
                             })
                         }
                     >
-                        <img src="/cart.svg" alt="корзина" />
+                        <img src="/pizza-app-react/cart.svg" alt="корзина" />
                         Корзина
                         {items.length !== 0 && <span className={styles.count}>{items.length}</span>}
                     </NavLink>
                 </div>
                 <Button className={styles.exit} onClick={logout}>
-                    <img src="/off.svg" alt="exit" />
+                    <img src="/pizza-app-react/off.svg" alt="exit" />
                     Выйти
                 </Button>
             </div>

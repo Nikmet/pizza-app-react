@@ -39,7 +39,7 @@ export function CartItem(props: CartItemProps) {
                     +
                 </button>
                 <button className={cn(styles.button, styles.delete)} onClick={deleteProduct}>
-                    <img src="/delete.svg" alt="Удалить товар" />
+                    <img src="/pizza-app-react/delete.svg" alt="Удалить товар" />
                 </button>
             </div>
         </div>

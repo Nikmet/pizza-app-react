@@ -1,9 +1,9 @@
 {
     "name": "pizza-app-react",
-    "private": true,
-    "version": "0.0.0",
+    "private": false,
+    "version": "1.0.0",
     "type": "module",
-    "homepage": "https://Nikmet.github.io/pizza-app-react",
+    "homepage": "https://nikmet.github.io/pizza-app-react/auth/login",
     "scripts": {
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist",

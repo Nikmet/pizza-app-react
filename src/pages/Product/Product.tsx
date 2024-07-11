@@ -25,7 +25,7 @@ export function Product() {
                         <div>
                             <div className={styles.header}>
                                 <button className={styles.back} onClick={goBack}>
-                                    <img src="/back.svg" alt="back" />
+                                    <img src="/pizza-app-react/back.svg" alt="back" />
                                 </button>
                                 <Headling>{data.name}</Headling>
                                 <Button
@@ -35,7 +35,8 @@ export function Product() {
                                         dispatch(cartActions.add(data.id));
                                     }}
                                 >
-                                    <img src="/cart-white.svg" alt="cart" />В корзину
+                                    <img src="/pizza-app-react/cart-white.svg" alt="cart" />В
+                                    корзину
                                 </Button>
                             </div>
                             <div className={styles.body}>
@@ -52,7 +53,7 @@ export function Product() {
                                         <span>Рейтинг</span>
                                         <div className={styles.rating}>
                                             {data.rating}
-                                            <img src="/star.svg" alt="звездочка" />
+                                            <img src="/pizza-app-react/star.svg" alt="звездочка" />
                                         </div>
                                     </div>
                                     <div className={styles.ingredients}>

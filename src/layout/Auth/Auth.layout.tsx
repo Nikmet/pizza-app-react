@@ -5,7 +5,7 @@ export function AuthLayout() {
     return (
         <div className={styles.layout}>
             <div className={styles.logo}>
-                <img src="/auth-image.svg" alt="logo" />
+                <img src="/pizza-app-react/auth-image.svg" alt="logo" />
             </div>
             <div className={styles.content}>
                 <Outlet />
